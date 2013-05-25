@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+
+
+
+
+
+<!-- Scripts -->
+<script src="scripts/js/scripts.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<style type="text/css">@import "css/jquery.countdown.css";</style>
+<script type="text/javascript" src="scripts/js/jquery.countdown.js"></script>
+
+
+
+
+
+<!-- COUNTDOWN TIMER -->
+
+<!-- This goes in the HEAD of the html file -->
+
+<script language="JavaScript" type="text/javascript">
+<!-- Copyright 2006, Sandeep Gangadharan -->
+<!-- For more free scripts go to http://www.sivamdesign.com/scripts/ -->
+
+<!--
+var sec = 30;   // set the seconds
+var min = 00;   // set the minutes
+
+function countDown() {
+   sec--;
+  if (sec == -01) {
+   sec = 59;
+   min = min - 1; }
+  else {
+   min = min; }
+
+if (sec<=9) { sec = "0" + sec; }
+
+  time = (min<=9 ? "0" + min : min) + " " + sec;
+
+if (document.getElementById) { document.getElementById('theTime').innerHTML = time; }
+
+SD=window.setTimeout("countDown();", 1000);
+if (min == '00' && sec == '00') { sec = "00"; window.clearTimeout(SD); }
+}
+window.onload = countDown;
+// -->
+</script>
+
+<style type="text/css">
+<!--
+ .timeClass {
+  font-family:arial,verdana,helvetica,sans-serif;
+  font-weight:normal;
+  font-size:10pt;
+  }
+-->
+</style>
+
+
+</xmp>
+
+
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+
+<input type="text" placeholder="Please enter a sentence" id="inputField" name="inputField" />
+<input type="button" onclick="printValue()" />
+
+
+
+<!--<input type="button" value="Submit" id="enterSentence" class="enterSentence" />-->
+
+<p id="hello"></p>
+
+
+
+</div>
+
+
+<!--
+<script type="text/javascript">
+function update(element)
+{
+  document.getElementById("dynamic_name").innerHTML = element.value;
+}
+</script>
+<input type="text" onkeypress="update(this)" />
+<div id="dynamic_name"></div>
+-->
+
+
+
+
+
+<!-- This goes into the BODY of the file -->
+
+<table width="100%">
+ <tr><td width="100%" align="center"><span id="theTime" class="timeClass"></span></td></tr>
+</table>
+
+
+
+<script>
+var newYear = new Date(); 
+newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1); 
+$('#defaultCountdown').countdown({until: newYear}); 
+ 
+$('#removeCountdown').toggle(function() { 
+        $(this).text('Re-attach'); 
+        $('#defaultCountdown').countdown('destroy'); 
+    }, 
+    function() { 
+        $(this).text('Remove'); 
+        $('#defaultCountdown').countdown({until: newYear}); 
+    } 
+);
+</script>
+
+
+
+<span class="countdown_row countdown_show4"><span class="countdown_section"><span class="countdown_amount">183</span><br>Days</span><span class="countdown_section"><span class="countdown_amount">2</span><br>Hours</span><span class="countdown_section"><span class="countdown_amount">1</span><br>Minute</span><span class="countdown_section"><span class="countdown_amount">15</span><br>Seconds</span></span>
+
+
+
+
+		<h2>Default Settings</h2>
+		<p>The countdown functionality can easily be added to a division with appropriate
+			default settings, although you do need to set the target time.
+			You can also remove the countdown widget if it is no longer required.</p>
+		<p><span class="demoLabel">Default countdown:</span>
+			<span id="defaultCountdown" class="countdown hasCountdown"><span class="countdown_row countdown_show4"><span class="countdown_section"><span class="countdown_amount">183</span><br>Days</span><span class="countdown_section"><span class="countdown_amount">1</span><br>Hour</span><span class="countdown_section"><span class="countdown_amount">50</span><br>Minutes</span><span class="countdown_section"><span class="countdown_amount">39</span><br>Seconds</span></span></span>&nbsp;
+			<button type="button" id="removeCountdown">Remove</button></p>
+		<pre><div class="showCode"><a href="#" class="showCode">Show code</a><code style="display: none;" class="js">&nbsp;<br><span class="js__statement">var</span>&nbsp;newYear&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__object">Date</span>();&nbsp;<br>newYear&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__object">Date</span>(newYear.getFullYear()&nbsp;+&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">1</span>&nbsp;-&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">1</span>);&nbsp;<br>$(<span class="js__string">'#defaultCountdown'</span>).countdown(<span class="js__brace">{</span>until:&nbsp;newYear<span class="js__brace">}</span>);&nbsp;<br>&nbsp;<br>$(<span class="js__string">'#removeCountdown'</span>).toggle(<span class="js__operator">function</span>()&nbsp;<span class="js__brace">{</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="js__operator">this</span>).text(<span class="js__string">'Re-attach'</span>);&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="js__string">'#defaultCountdown'</span>).countdown(<span class="js__string">'destroy'</span>);&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>()&nbsp;<span class="js__brace">{</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="js__operator">this</span>).text(<span class="js__string">'Remove'</span>);&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="js__string">'#defaultCountdown'</span>).countdown(<span class="js__brace">{</span>until:&nbsp;newYear<span class="js__brace">}</span>);&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;<br>);</code></div></pre>
+		<p>The defaults are:</p>
+		<ul>
+			<li>Text is in English</li>
+			<li>Format is 'dHMS'</li>
+			<li>Days are shown if needed</li>
+			<li>Hours/minutes/seconds are shown</li>
+		</ul>
+		<p>You can override the defaults globally as shown below:</p>
+		<pre><code class="js">$.countdown.setDefaults(<span class="js__brace">{</span>description:&nbsp;<span class="js__string">'Until&nbsp;liftoff'</span><span class="js__brace">}</span>);</code></pre>
+		<p>Processed fields are marked with a class of <code>hasCountdown</code>
+			and are not re-processed if targetted a second time.</p>
+		<hr>
+		<p><em>A note on Date</em> - the JavaScript <code>Date</code> constructor expects
+			the year, month, and day as parameters. However, the month ranges from 0 to 11.
+			To make explicit what date is intended (does a month of 3 mean March or April?)
+			I specify the month from 1 to 12 and manually subtract the 1.
+			Thus the following denotes 25 December, 2010.</p>
+		<pre><code class="js">$(selector).countdown(<span class="js__brace">{</span>since:&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__object">Date</span>(<span class="js__num">2010</span>,&nbsp;<span class="js__num">12</span><span class="js__num">-1</span>,&nbsp;<span class="js__num">25</span>)<span class="js__brace">}</span>);</code></pre>
+	
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
